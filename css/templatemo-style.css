@@ -215,6 +215,7 @@ header .social-icon li a
 		font-weight: 300;
 		font-size: 70px;
 		padding-bottom: 10px;
+		padding-top: 20px;
 	}
 #home h1 span
 	{
@@ -302,13 +303,15 @@ header .social-icon li a
 /* end team */
 
 /* start service */
-#service .col-md-4
+#service .
+-4
 	{
 		padding: 40px;
 		-webkit-transition: all 0.4s ease-in-out;
 		        transition: all 0.4s ease-in-out;
 	}
-#service .col-md-4:hover
+#service .
+-4:hover
 	{
 		background: #505050;
 	}
