@@ -1,10 +1,12 @@
 
 function getConfirmation() {
    // alert('Hi')
-   setEmployee()
+   // required()
+
 
    var retVal = confirm("Do you want to submit ?");
    if (retVal == true) {
+      setEmployee()
       document.write("User successfully added");
       return true;
    } else {
@@ -49,19 +51,19 @@ function getDetail() {
 
 }
 
-function onPageLoad(){
+function onPageLoad() {
 
    var localValue = JSON.parse(localStorage.person);
    document.getElementById("id1").value = localValue.id;
    document.getElementById("id2").value = localValue.name;
    document.getElementById("id3").value = localValue.salary;
-   console.log("VALUE",localValue);
+   console.log("VALUE", localValue);
 
 }
 
 function saveDetailConfirmation() {
-   
-   
+
+
 
    var ret = confirm("Do you want to update the detail ?");
    if (ret == true) {
@@ -98,4 +100,44 @@ function deleteDetail() {
 // function previousDetail(){
 
 // }
+function validateForText(){
+   
+
+}
+
+
+function validateForNumber(evt) {
+   var theEvent = evt || window.event;
+   if (theEvent.type === 'paste') {
+      key = event.clipboardData.getData('text/plain');
+   } else {
+      var key = theEvent.keyCode || theEvent.which;
+      key = String.fromCharCode(key);
+   }
+   var regex = /[0-9]|\./;
+   if (!regex.test(key)) {
+      theEvent.returnValue = false;
+      if (theEvent.preventDefault) theEvent.preventDefault();
+   }
+}
+
+
+function required() {
+   empt1 = document.myform.id.value;
+   empt2 = document.myform.name.value;
+   empt3 = document.myform.salary.value;
+   if (empt1 === "") {
+      alert("Please input a Id");
+   }
+   else if(empt2 === "") {
+         alert("Please input a Name");
+      }
+      else if(empt3 === "") {
+         alert("Please input a Salary");
+      }
+   else {
+      getConfirmation()
+   }
+}
+
 
